@@ -1,0 +1,23 @@
+# Dependencies
+/client/node_modules
+/wallet-api-service/node_modules
+/wallet-db-service/node_modules
+
+# Environment files
+.env
+/client/.env
+/wallet-api-service/.env
+/wallet-db-service/.env
+
+# Build
+/client/build
+/client/dist
+/wallet-api-service/build
+/wallet-api-service/dist
+/wallet-db-service/build
+/wallet-db-service/dist
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
