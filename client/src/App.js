@@ -111,7 +111,7 @@ function App() {
       
       if (response.ok) {
         setCurrentBalance(data.balance);
-        setTransactions(data.transactions);
+        setTransactions(data.Transactions);
         setPagination(data.pagination);
         setCurrentPage(page);
       } else {

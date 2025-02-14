@@ -1,3 +1,5 @@
+
+// @vendors
 import React from 'react';
 
 function TransactionHistory({ transactions, currentPage, pagination, handleCheckBalance }) {
@@ -45,9 +47,26 @@ function TransactionHistory({ transactions, currentPage, pagination, handleCheck
           {transactions.map((t) => (
             <tr key={t.id} className={t.type.toLowerCase()}>
               <td>{t.type}</td>
-              <td>${parseFloat(t.amount).toFixed(2)}</td>
-              <td>{t.status}</td>
-              <td>{new Date(t.date).toLocaleString()}</td>
+              <td>
+              <p className={`${
+                  t.type === 'PAYMENT' ? 'payment' : 'recharge'
+                }`}>
+                  {t.type === 'PAYMENT' ? '-' : '+'}
+                  ${t.amount}
+                </p>
+              </td>
+              <td>
+              <p className={`${
+                  t.status === 'COMPLETED' 
+                    ? 'payment' 
+                    : t.status === 'FAILED'
+                    ? 'recharge'
+                    : 'warning'
+                }`}>
+                  {t.status}
+                </p>
+              </td>
+              <td>{new Date(t.createdAt).toLocaleString()}</td>
             </tr>
           ))}
         </tbody>

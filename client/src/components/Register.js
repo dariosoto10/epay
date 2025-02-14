@@ -1,3 +1,4 @@
+// @vendors
 import React from 'react';
 
 function Register({ form, updateForm, handleSubmit }) {

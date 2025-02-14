@@ -1,4 +1,7 @@
+// @vendors
 import React from 'react';
+
+// @components
 import TransactionHistory from './TransactionHistory';
 
 function Balance({ 

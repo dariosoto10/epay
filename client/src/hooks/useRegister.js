@@ -1,6 +1,8 @@
+// @vendors
 import { useState } from 'react';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+// @config
+import { API_URLS } from '../config';
 
 export const useRegister = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +12,7 @@ export const useRegister = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${API_URL}/clients`, {
+      const response = await fetch(API_URLS.clients, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

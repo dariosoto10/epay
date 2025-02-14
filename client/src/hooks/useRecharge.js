@@ -1,6 +1,9 @@
+
+// @vendors
 import { useState } from 'react';
 
-const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+// @config
+import { API_URLS } from '../config';
 
 export const useRecharge = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +13,7 @@ export const useRecharge = () => {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`${API_URL}/recharge`, {
+      const response = await fetch(API_URLS.recharge, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
